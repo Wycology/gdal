@@ -12,3 +12,8 @@ gdalinfo -stats blabla.tif # Checkinf statistics of one of the files, just to be
 dir /b *.tif filelist.txt # Putting the names of all the files into a single file list
 gldabuildvrt -input_file_list filelist.txt merged.vrt # Creating a virtual merged file
 gdal_translate -of GTiff merged.vrt merged.tif -co COMPRESS=DEFLATE -co TILED=YES # Merging all the virtual files into merged.tif
+
+
+# Cropping raster to bound
+
+gdalwarp -cutline aoi.shp  -crop_to_cutline naip.vrt aoi_cut.tif -co COMPRESS=DEFLATE -co TILED=YES
