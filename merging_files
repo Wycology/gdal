@@ -2,7 +2,10 @@
 # Do the following in the command prompt
 conda create --name gdal
 conda activate gdal
-gdalinfo --version # Check the version of the gdal
+gdalinfo --version # Check the version of the gdal. If there is no gdal, install it using the code below
+
+conda install -c conda-forge gdal libgdal-jp2openjpeg # Then rerun the previous code to check the version
+
 cd D: # Here, you cd into the folder containing the files
 gdalinfo blabla.tif # Confirming one of the .tif images in the folder
 gdalinfo -stats blabla.tif # Checkinf statistics of one of the files, just to be sure all is well.
